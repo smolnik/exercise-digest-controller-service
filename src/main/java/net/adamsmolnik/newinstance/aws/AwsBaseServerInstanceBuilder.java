@@ -16,6 +16,7 @@ import net.adamsmolnik.newinstance.ServerInstanceBuilder;
 import net.adamsmolnik.newinstance.SetupParamsView;
 import net.adamsmolnik.util.Log;
 import net.adamsmolnik.util.Scheduler;
+import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.CreateTagsRequest;
 import com.amazonaws.services.ec2.model.DescribeInstanceStatusRequest;
@@ -98,7 +99,7 @@ public abstract class AwsBaseServerInstanceBuilder<T extends SetupParamsView, R 
     @Inject
     protected Log log;
 
-    protected AmazonEC2Client ec2;
+    protected AmazonEC2 ec2;
 
     @PostConstruct
     private void init() {
